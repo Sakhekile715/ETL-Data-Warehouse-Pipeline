@@ -6,7 +6,7 @@ BEGIN
 	DROP DATABASE MedallionWarehouse;
 END;
 
-Note: This script will drop the database if it exists with all its contents and recreate it.
+Note: This script will drop the database if it exists, including all its contents, and recreate it.
 GO*/
 
 USE master;
