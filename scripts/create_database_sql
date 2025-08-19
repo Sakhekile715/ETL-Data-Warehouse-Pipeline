@@ -1,0 +1,26 @@
+/* This part of the query aims to create the database that will be used for this project. To check if the database that is being created already exists, use this script:
+
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'MedallionWarehouse')
+BEGIN
+	ALTER DATABASE MedallionWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE MedallionWarehouse;
+END;
+
+Note: This script will drop the database if it exists with all its contents and recreate it.
+GO*/
+
+USE master;
+
+Create Database MedallionWarehouse;
+
+USE MedallionWarehouse;
+
+--- Creating a schema for each layer.
+CREATE SCHEMA bronze;
+GO --- This is essentially used as a 'separator' used to ensure the script executes the above statement/query before moving to the next.
+
+CREATE SCHEMA silver;
+GO
+
+CREATE SCHEMA gold
+GO
